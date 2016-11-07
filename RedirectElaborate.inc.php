@@ -3,7 +3,7 @@
 header('Content-Type: text/plain');
 
 if((isFromAdFly()) || (isFromAdultxyz()) || (isFromCoinURL())){
-    if(isFromAdultxyz()){
+    if((isFromAdultxyz()) || (isFromCoinURL())){
         if(isFromCoinURL()){
             echo gotoShortest()."\n";
             //header('Location: '.gotoShortest());
