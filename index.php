@@ -23,7 +23,7 @@ function getHandler(){
         '4' => 'ParkElaborate'
     );
 
-    $type = 'RedirectSimple';
+    $type = 'RedirectElaborate';
 
     $call = kat2APICall('http://intern.kat2.net/api/parker/?domain='.$domain.'&noViewUpdate&noHTML');
     $arr = json_decode($call, true);
