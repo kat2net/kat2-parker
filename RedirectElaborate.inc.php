@@ -1,7 +1,4 @@
 <?php
-
-header('Content-Type: text/plain');
-
 if((isFromAdFly()) || (isFromAdultxyz()) || (isFromCoinURL()) || (isFromShortest())){
     if((isFromAdultxyz()) || (isFromCoinURL()) || (isFromShortest())){
         if((isFromCoinURL()) || (isFromShortest())){
