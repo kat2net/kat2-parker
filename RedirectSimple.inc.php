@@ -3,7 +3,7 @@
 if(isFromAdFly()){
     require_once('ParkSimple.inc.php');
 }else{
-    echo gotoAdFly();
+    header('Location: '.gotoAdFly());
 }
 
 function isFromAdFly(){
