@@ -1,6 +1,23 @@
 <?php
-echo gotoAdFly();
-print_r($_SERVER);
+
+if(isFromAdFly()){
+    echo 's';
+}else{
+    echo gotoAdFly();
+}
+
+function isFromAdFly(){
+    global $_SERVER;
+
+    $re = false;
+    if(isset($_SERVER['HTTP_REFERER'])){
+        if(stristr($_SERVER['HTTP_REFERER'], 'http://adf.ly/')){
+            $re = true;
+        }
+    }
+
+    return $re;
+}
 
 function gotoAdFly(){
     global $domain;
