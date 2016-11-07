@@ -95,7 +95,7 @@ function isFromShortest(){
 
     $re = false;
     if(isset($_SERVER['HTTP_REFERER'])){
-        if(stristr($_SERVER['HTTP_REFERER'], 'http://cur.lv/')){
+        if(stristr($_SERVER['HTTP_REFERER'], 'http://sh.st/')){
             $re = true;
         }
     }

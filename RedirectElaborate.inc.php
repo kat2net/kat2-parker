@@ -2,11 +2,15 @@
 
 header('Content-Type: text/plain');
 
-if((isFromAdFly()) || (isFromAdultxyz()) || (isFromCoinURL())){
-    if((isFromAdultxyz()) || (isFromCoinURL())){
-        if(isFromCoinURL()){
-            echo gotoShortest()."\n";
-            //header('Location: '.gotoShortest());
+if((isFromAdFly()) || (isFromAdultxyz()) || (isFromCoinURL()) || (isFromShortest())){
+    if((isFromAdultxyz()) || (isFromCoinURL()) || (isFromShortest())){
+        if((isFromCoinURL()) || (isFromShortest())){
+            if(isFromShortest()){
+                echo 'done';
+            }else{
+                echo gotoShortest()."\n";
+                //header('Location: '.gotoShortest());
+            }
         }else{
             echo gotoCoinURL()."\n";
             //header('Location: '.gotoCoinURL());
