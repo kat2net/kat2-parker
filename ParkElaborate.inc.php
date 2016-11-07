@@ -1,2 +1,2 @@
 <?php
-echo 'this is ParkElaborate!';
+print_r($arr);

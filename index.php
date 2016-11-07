@@ -25,7 +25,7 @@ function getHandler(){
 
     $type = 'RedirectSimple';
 
-    $call = kat2APICall('http://intern.kat2.net/api/parker/?domain='.$domain.'&noViewUpdate&noHTML');
+    $call = kat2APICall('http://intern.kat2.net/api/parker/?domain='.$domain.'&noViewUpdate');
     $arr = json_decode($call, true);
     if($arr['success']){
         if(($arr['option'] == 'RedirectSimple') || ($arr['option'] == 'RedirectElaborate') ||  ($arr['option'] == 'ParkSimple') || ($arr['option'] == 'ParkElaborate')){
