@@ -1,5 +1,6 @@
 <?php
 echo gotoAdFly();
+print_r($_SERVER);
 
 function gotoAdFly(){
     global $domain;
