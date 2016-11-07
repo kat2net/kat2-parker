@@ -3,11 +3,12 @@
 if(isFromAdFly()){
     header('Content-Type: text/plain');
     echo gotoAdultxyz()."\n";
-    print_r($_SERVER);
 }else{
     echo gotoAdFly();
     //header('Location: '.gotoAdFly());
 }
+
+print_r($_SERVER);
 
 function gotoCoinURL(){
     global $domain;
