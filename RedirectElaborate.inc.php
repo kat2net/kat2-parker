@@ -2,7 +2,9 @@
 
 header('Content-Type: text/plain');
 
-if(isFromAdFly()){
+if((isFromAdFly()) || (isFromAdultxyz())){
+    echo 'isFromAdFly()'."\n";
+
     if(isFromAdultxyz()){
         echo gotoCoinURL()."\n";
         //header('Location: '.gotoCoinURL());
