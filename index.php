@@ -1,7 +1,14 @@
 <?php
-echo getHandler(getDomain());
+$domain = getDomain();
+$handler = getHandler();
 
-function getHandler($domain){
+function handleRedirectSimple(){
+    global $domain;
+}
+
+function getHandler(){
+    global $domain;
+
     $types = array(
         '1' => 'RedirectSimple',
         '2' => 'RedirectElaborate',
@@ -9,14 +16,14 @@ function getHandler($domain){
         '4' => 'ParkElaborate'
     );
 
-    $type = '1';
-    if($domain == 'kat2-parker.herokuapp.com'){$type = '1';}
-    if($domain == 'empetree.com'){$type = '1';}
-    if($domain == 'qloud.live'){$type = '1';}
-    if($domain == 'qloud.site'){$type = '1';}
-    if($domain == 'ratdir.com'){$type = '1';}
+    $type = 'RedirectSimple';
+    if($domain == 'kat2-parker.herokuapp.com'){$type = 'RedirectSimple';}
+    if($domain == 'empetree.com'){$type = 'RedirectSimple';}
+    if($domain == 'qloud.live'){$type = 'RedirectSimple';}
+    if($domain == 'qloud.site'){$type = 'RedirectSimple';}
+    if($domain == 'ratdir.com'){$type = 'RedirectSimple';}
 
-    return $types[$type];
+    require_once($type.'.inc.php');
 }
 
 function getDomain(){
