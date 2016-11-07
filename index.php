@@ -139,9 +139,7 @@ function gotoShortest(){
     $buffer = curl_exec($ch);
     curl_close($ch);
 
-    return $buffer;
+    $buffer = json_decode($buffer, true);
 
-    //$url = file_get_contents('https://coinurl.com/api.php?uuid=50d6e43d31c22900631610&url='.urlencode('http://'.$domain.'/'));
-
-    //return $url;
+    return $buffer['shortenedUrl'];
 }
