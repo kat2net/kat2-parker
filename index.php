@@ -78,6 +78,30 @@ function isFromAdultxyz(){
 
     return $re;
 }
+function isFromCoinURL(){
+    global $_SERVER;
+
+    $re = false;
+    if(isset($_SERVER['HTTP_REFERER'])){
+        if(stristr($_SERVER['HTTP_REFERER'], 'http://cur.lv/')){
+            $re = true;
+        }
+    }
+
+    return $re;
+}
+function isFromShortest(){
+    global $_SERVER;
+
+    $re = false;
+    if(isset($_SERVER['HTTP_REFERER'])){
+        if(stristr($_SERVER['HTTP_REFERER'], 'http://cur.lv/')){
+            $re = true;
+        }
+    }
+
+    return $re;
+}
 
 function gotoAdFly(){
     global $domain;
@@ -99,4 +123,25 @@ function gotoCoinURL(){
     $url = file_get_contents('https://coinurl.com/api.php?uuid=50d6e43d31c22900631610&url='.urlencode('http://'.$domain.'/'));
 
     return $url;
+}
+function gotoShortest(){
+    global $domain;
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'https://api.shorte.st/v1/data/url');
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+    curl_setopt($ch, CURLOPT_POSTFIELDS, 'urlToShorten='.urlencode('http://'.$domain.'/'));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'public-api-token: fd38e32ea208fe04fdf17aab978f0b51'
+    ));
+    $buffer = curl_exec($ch);
+    curl_close($ch);
+
+    return $buffer;
+
+    //$url = file_get_contents('https://coinurl.com/api.php?uuid=50d6e43d31c22900631610&url='.urlencode('http://'.$domain.'/'));
+
+    //return $url;
 }
