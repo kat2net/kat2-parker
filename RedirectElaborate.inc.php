@@ -1,10 +1,12 @@
 <?php
 
+header('Content-Type: text/plain');
+
 if(isFromAdFly()){
-    header('Content-Type: text/plain');
     echo gotoAdultxyz()."\n";
+    //header('Location: '.gotoAdultxyz());
 }else{
-    echo gotoAdFly();
+    echo gotoAdFly()."\n";
     //header('Location: '.gotoAdFly());
 }
 
