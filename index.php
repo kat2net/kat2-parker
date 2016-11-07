@@ -1,4 +1,11 @@
 <?php
+
+if(isset($_GET['forceHome'])){
+    header('Location: /');
+    exit();
+    die();
+}
+
 $domain = getDomain();
 $handler = getHandler();
 
