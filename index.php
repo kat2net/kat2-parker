@@ -66,11 +66,37 @@ function isFromAdFly(){
 
     return $re;
 }
+function isFromAdultxyz(){
+    global $_SERVER;
+
+    $re = false;
+    if(isset($_SERVER['HTTP_REFERER'])){
+        if(stristr($_SERVER['HTTP_REFERER'], 'http://zo.ee/')){
+            $re = true;
+        }
+    }
+
+    return $re;
+}
 
 function gotoAdFly(){
     global $domain;
 
     $url = file_get_contents('https://api.adf.ly/v1/shorten?&_user_id=7321466&_api_key=f9e524c57f6696b19bf7bb121d094fb8&domain=adf.ly&url='.urlencode('http://'.$domain.'/'));
+
+    return $url;
+}
+function gotoAdultxyz(){
+    global $domain;
+
+    $url = file_get_contents('https://api.adult.xyz/v1/shorten?&_user_id=14921373&_api_key=05eb0cdc706f2cf1035e24ac8eef05e1&domain=zo.ee&url='.urlencode('http://'.$domain.'/'));
+
+    return $url;
+}
+function gotoCoinURL(){
+    global $domain;
+    
+    $url = file_get_contents('https://coinurl.com/api.php?uuid=50d6e43d31c22900631610&url='.urlencode('http://'.$domain.'/'));
 
     return $url;
 }
