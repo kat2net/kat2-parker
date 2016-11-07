@@ -1,7 +1,7 @@
 <?php
 
 if(isFromAdFly()){
-    echo 's';
+    require_once('ParkSimple.inc.php');
 }else{
     echo gotoAdFly();
 }
