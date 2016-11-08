@@ -47,7 +47,6 @@ function kat2APICall($url){
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_USERPWD, 'god:82STHSUVPhr*!*');  
     $buffer = curl_exec($ch);
     curl_close($ch);
 
